@@ -28,10 +28,30 @@ class APIController extends Controller
         {
             return ["Results"=>"Device added successfully"];
         }
-        else{
-            return "operation failed";
+        else
+        {
+            return ["Result"=>"Addition operation failed"];
         }
        
+    }
+
+    public function updateDevice(Request $req){
+        $device = Device::find($req->id);
+        $device->device_name=$req->device_name;
+        $device->member_id=$req->member_id;
+        $result=$device->save();
+
+        if($result)
+        {
+            return ["Result"=>"device updated successfully"];
+        }
+        else
+        {
+            return ["Result"=>"update operation failed!!"];
+        }
+
+        
+
     }
 
 }
