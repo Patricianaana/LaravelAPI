@@ -17,4 +17,21 @@ class APIController extends Controller
         return Device::all();
     }
 
+    public function addDevice(Request $req)
+    {
+        $device= new Device;
+        $device->device_name=$req->device_name;
+        $device->member_id=$req->member_id;
+        $results=$device->save();
+    
+        if($results)
+        {
+            return ["Results"=>"Device added successfully"];
+        }
+        else{
+            return "operation failed";
+        }
+       
+    }
+
 }
