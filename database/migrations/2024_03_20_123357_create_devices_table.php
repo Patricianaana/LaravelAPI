@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('devices', function (Blueprint $table) {
             $table->id();
             $table->string('device_name');
-            $table->foreignId('employee_id')->constrained;
+            $table->foreignId('member_id')->constrained;
         });
     }
 
