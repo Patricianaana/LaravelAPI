@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get("data",[APIController::class, 'getData']);
+Route::get('list',[APIController::class, 'deviceList']);
