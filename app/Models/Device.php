@@ -11,6 +11,6 @@ class Device extends Model
     protected $fillables= 
     [
         'device_name',
-        'employee_id'
+        'member_id'
     ];
 }
