@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Member;
+use App\Models\Company;
+use App\Models\Device;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -12,6 +14,7 @@ class UsersController extends Controller
     public function index()
     {
         //
+        return Company::all();
     }
 
     /**

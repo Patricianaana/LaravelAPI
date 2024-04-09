@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\APIController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,5 @@ Route::get('search/{device_name}',[APIController::class, 'searchDevice']);
 Route::post('save', [APIController::class, 'testData']);
 
 Route::post('upload', [APIController::class, 'uploadFile']);
+
+Route::apiResource('members', UsersController::class);
