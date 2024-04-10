@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Device;
+use App\Models\Member;
 use Illuminate\Support\Facades\Validator;
 
 use Illuminate\Http\Request;
@@ -10,7 +11,8 @@ class APIController extends Controller
 {
     //
     public function getData(){
-        return["name"=>"Tricia", "age"=>16, "email"=>"tricia@gmail.com", "address"=>"South Korea"];
+        // return["name"=>"Tricia", "age"=>16, "email"=>"tricia@gmail.com", "address"=>"South Korea"];
+        return Member::all();
     }
 
     public function deviceList()
