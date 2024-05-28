@@ -10,7 +10,8 @@ use Illuminate\Http\Request;
 class APIController extends Controller
 {
     //
-    public function getData(){
+    public function getData()
+    {
         // return["name"=>"Tricia", "age"=>16, "email"=>"tricia@gmail.com", "address"=>"South Korea"];
         return Member::all();
     }
@@ -69,9 +70,15 @@ class APIController extends Controller
         
     }
 
+
     public function searchDevice($device_name)
     {
         return Device::where("device_name","like","%".$device_name."%")->get();
+    }
+
+    public function searchMember($name)
+    {
+        return Member::where('name', 'like','%'.$name.'%')->get();
     }
 
     public function testData(Request $req)

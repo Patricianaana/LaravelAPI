@@ -17,7 +17,7 @@ Route::put('update',[APIController::class, 'updateDevice']);
 Route::delete('delete/{id}',[APIController::class, 'deleteDevice']);
 Route::get('search/{device_name}',[APIController::class, 'searchDevice']);
 Route::post('save', [APIController::class, 'testData']);
-
+Route::get('serch/{name}', [APIController::class, 'searchMember']);
 Route::post('upload', [APIController::class, 'uploadFile']);
 
 Route::apiResource('members', UsersController::class);
